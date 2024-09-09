@@ -24,7 +24,11 @@ if(BUILD_TESTING)
 endif()
 
 rosidl_generate_interfaces(${PROJECT_NAME}
+# add custom msgs here  
 "msg/Age.msg"
+
+# add custom srv here
+"srv/AddTwoInts.srv"
 )
 
 ament_package()
