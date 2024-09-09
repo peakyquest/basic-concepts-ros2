@@ -28,15 +28,19 @@ setup(
 #code
 ...
 #code
-entry_points={
-'console_scripts': [
-'<executable_name> = <package_name>.<script_name>:main'
-],
-},
+    entry_points={
+        'console_scripts': [
+            'talker_node = ros2_basic_python.talker:main',
+            'listener_node = ros2_basic_python.listener:main',
+            'custom_msg_node = ros2_basic_python.age:main'
+        ],
+    }
 #code
 ...
 )
+
 ```
+format:  '<executable_name> = <package_name>.<script_name>:main'
 
 For Launch File 
 ```
@@ -49,12 +53,12 @@ setup(
 #code
 ...
 #code
-data_files=[
-('share/ament_index/resource_index/packages',
-['resource/' + package_name]),
-('share/' + package_name, ['package.xml']),
-(os.path.join('share', package_name), glob('launch/*.launch.py'))
-],
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name), glob('launch/*.launch.py'))
+    ],
 #code
 ...
 #code

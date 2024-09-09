@@ -9,14 +9,14 @@ def generate_launch_description():
             executable='talker_node',
             output='screen',
         ),
-        
+
         # Subscriber Node 
          Node(
             package='ros2_basic_python',
             executable='listener_node',
             output='screen',
         ),
-
+        
     ])
 
 

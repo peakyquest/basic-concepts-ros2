@@ -24,7 +24,8 @@ setup(
     entry_points={
         'console_scripts': [
             'talker_node = ros2_basic_python.talker:main',
-            'listener_node = ros2_basic_python.listener:main'
+            'listener_node = ros2_basic_python.listener:main',
+            'custom_msg_node = ros2_basic_python.age:main'
         ],
     },
 )
