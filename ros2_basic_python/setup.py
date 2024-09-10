@@ -26,8 +26,8 @@ setup(
             'talker_node = ros2_basic_python.talker:main',
             'listener_node = ros2_basic_python.listener:main',
             'custom_msg_node = ros2_basic_python.age:main',
-            'server = ros2_basic_python.add_two_ints:main',
-            'client = ros2_basic_python.client_srv:main'
+            'server = ros2_basic_python.add_two_ints_server:main',
+            'client = ros2_basic_python.add_two_ints_client:main'
         ],
     },
 )
