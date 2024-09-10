@@ -92,3 +92,10 @@ Build the package using `colcon`:
 
 ```bash
 colcon build --packages-select <your_package_name>
+```
+### Usage of the Package
+Update the package.xml file of the package where you want to use the following custom interfaces. 
+```bash
+<depend>ros2_basic_msgs</depend>
+```
+
