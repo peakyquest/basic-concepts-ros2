@@ -13,7 +13,6 @@ def generate_launch_description():
     nav2_yaml = os.path.join(get_package_share_directory('localization_server'), 'config', 'amcl_config.yaml')
     map_file = os.path.join(get_package_share_directory('map_server'), 'maps', 'turtlebot3_world.yaml')
     rviz_config_file_path = os.path.join(get_package_share_directory('path_planner_server'), 'rviz_config', 'pathplanning.rviz')
-    filters_yaml = os.path.join(get_package_share_directory('path_planner_server'), 'config', 'filters.yaml')
     
 
     return LaunchDescription([
@@ -49,7 +48,6 @@ def generate_launch_description():
             output='screen',
             parameters=[planner_yaml]),
 
-
         Node(
             package='nav2_behaviors',
             executable='behavior_server',
@@ -63,21 +61,6 @@ def generate_launch_description():
             name='bt_navigator',
             output='screen',
             parameters=[bt_navigator_yaml]),
-
-        Node(
-            package='nav2_map_server',
-            executable='map_server',
-            name='filter_mask_server',
-            output='screen',
-            emulate_tty=True,
-            parameters=[filters_yaml]),
-        Node(
-            package='nav2_map_server',
-            executable='costmap_filter_info_server',
-            name='costmap_filter_info_server',
-            output='screen',
-            emulate_tty=True,
-            parameters=[filters_yaml]),
 
         Node(
             package='rviz2',
@@ -99,5 +82,5 @@ def generate_launch_description():
                                         'planner_server',
                                         'recoveries_server',
                                         'bt_navigator',
-                                        'costmap_filter_info_server']}])
+                                         ]}])
     ])
