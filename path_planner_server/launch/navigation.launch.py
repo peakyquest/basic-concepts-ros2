@@ -6,12 +6,13 @@ from launch_ros.actions import Node
 def generate_launch_description():
 
     # Loading all the config files from map_server, localization_server & path_planner_server 
+    map_file = os.path.join(get_package_share_directory('map_server'), 'maps', 'turtlebot3_world.yaml')
     controller_yaml = os.path.join(get_package_share_directory('path_planner_server'), 'config', 'controller.yaml')
     bt_navigator_yaml = os.path.join(get_package_share_directory('path_planner_server'), 'config', 'bt_navigator.yaml')
     planner_yaml = os.path.join(get_package_share_directory('path_planner_server'), 'config', 'planner_server.yaml')
     recovery_yaml = os.path.join(get_package_share_directory('path_planner_server'), 'config', 'recovery.yaml')
     nav2_yaml = os.path.join(get_package_share_directory('localization_server'), 'config', 'amcl_config.yaml')
-    map_file = os.path.join(get_package_share_directory('map_server'), 'maps', 'turtlebot3_world.yaml')
+    
     rviz_config_file_path = os.path.join(get_package_share_directory('path_planner_server'), 'rviz_config', 'pathplanning.rviz')
     
 
